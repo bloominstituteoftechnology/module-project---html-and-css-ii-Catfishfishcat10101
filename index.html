@@ -18,7 +18,7 @@ img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
-input, button, textarea, select {
+input, button class, textarea, select {
   font: inherit;
 }
 p, h1, h2, h3, h4, h5, h6 {
@@ -28,64 +28,86 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
   </style>
+
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
     }
+
     #headerTop {
       color: white;
       padding: 0.5rem;
       background-color: black;
     }
+
     #headerTop div {
       display: inline-block;
     }
-    #headerTop span {
+
+    #headerTop > span {
       margin-right: 0.5rem;
     }
+
    .inline-container1 {
       font-weight: bold;
       text-transform: uppercase;
     }
+
     #headerBottom {
-      border-bottom: 1px;
-      border-color: solid gray;
-      padding: 0.5rem;
+      border: 1px solid gray;
+       padding: 0.5rem;
     }
-    #headerBottom div {
+
+    #headerBottom > div {
       display: inline-block;
     }
-       
-    /* 👉 Task 9- Target the "Compose" button, although note it's a div instead an actual button.
-    Give it color, bold text, background, padding, border radius, margin right, and a cursor of pointer. */
 
-    /* 👉 Task 10- Research how to remove all the default styling of button elements.
-    Target the button elements inside the element with id headerBottom.
-    Remove all their styling, give them a bit of margin to the right, and a cursor of pointer. */
+    .blkBtn {
+      color: green;
+      font-weight: bold;
+      background-color: black;
+      border-radius: 7px;
+      padding: 7px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
 
-    /* 👉 Task 11- Target the button element inside the id headerBottom that has a class of active
-    Make the font weight be bolder, and add a bottom border of 2 pixels solid color (you choose the color).
-    Add the class name to the "All mail" button. */
+    #headerBottom button {
+      padding: 0;
+      border: none;
+      background: none;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+    
+    #headerBottom button.active {
+      border-bottom: 2px solid green;
+      font-weight: bold;
+     }
 
-    /* 👉 Task 12- Target all divs directly nested inside elements with a class of email,
-    and make them display as inline-block elements.
-    This will make each email render all its details in the same line*/
+    .email > div {
+      display: inline-block;
+     }
 
-    /* 👉 Task 13- Target the elements with a class of email.
-    Give them some padding, bigger padding to the left, and a bottom border of very light grey. */
+    .email {
+      padding-left: 1rem;
+      padding: 0.4rem;
+      border-bottom: 1px solid lightgray;
+     }
+    
+     .email-name, .email-subject {
+        width: 35%;
+     }
 
-    /* 👉 Task 14- Target each div inside the element with a class of email.
-    Make the email author and the email subject take 35% of the width of the parent element.
-    Make the check, the date and the size take up 8% of the width of the parent element.
-    This will arrange the details in visible columns. */
+     .email-check, .email-date, .email-size {
+        width: 8%;
+     }
 
-    /* 👉 Task 15- Target the second email and have its font weight be bold.
-    This will make it look "unread". */
-
-    /* Well done! Check the design file to make sure you are close enough. */
-
-  </style>
-  <title>Document</title>
+     .email:nth-child(2) {
+      font-weight: bold;
+     }
+    </style>
+  <title>Module 4 Assignment</title>
 </head>
 
 <body>
@@ -104,11 +126,11 @@ p, h1, h2, h3, h4, h5, h6 {
         </div>
       </div>
       <div id="headerBottom">
-        <div>Compose</div>
+        <div class="blkBtn">Compose</div>
         <div>
-          <button>All mail</button>
-          <button>Unread</button>
-          <button>Pinned</button>
+          <button class="active">All mail</button>
+          <button>Unread</button> 
+          <button>Pinned</button> 
           <button>VIPs</button>
         </div>
       </div>
